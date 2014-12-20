@@ -1,0 +1,36 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<header class="hero-unit" id="banner">
+  <div class="container">
+    <h1>Quizerd</h1>
+    <img src="assets/images/quizerd.png" alt="I am Quizzerd">
+    <p class="lead">Question Writing of The Future!</p>
+  </div>
+</header>
+
+<div ng-hide="!isLoggedIn()" class="container">
+  <div style="height:20px;"></div>
+  <div class="btn-group btn-group-justified" role="group" aria-label="...">
+    <div class="btn-group" role="group">
+      <button ng-click="setDisplay('my questions')" type="button" class="btn btn-success">My Questions</button>
+    </div>
+    <div class="btn-group" role="group">
+      <button ng-click="setDisplay('create question')" type="button" class="btn btn-success">Create Question</button>
+    </div>
+    <div class="btn-group" role="group">
+      <button ng-click="setDisplay('find questions')" type="button" class="btn btn-success">Find Questions</button>
+    </div>
+    <div class="btn-group" role="group">
+      <button ng-click="setDisplay('find questions')" type="button" class="btn btn-primary">Workbench</button>
+    </div>
+  </div>
+  <myquestions ng-controller="CreatequestionCtrl" ng-show="checkDisplay('my questions')"></myquestions>
+  <createquestion ng-controller="CreatequestionCtrl" ng-show="checkDisplay('create question')"></createquestion>
+  <findquestions ng-show="checkDisplay('find questions')"></findquestions>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p> much Quizerds </p>
+  </div>
+</footer>

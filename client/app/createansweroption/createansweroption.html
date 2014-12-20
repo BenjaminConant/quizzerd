@@ -1,0 +1,10 @@
+<li>
+  <h4>
+    <input ng-model="option.value" placeholder="answer">
+    <button ng-show="checkAnswer(option)" class="btn btn-success">correct</button>
+    <button ng-hide="checkAnswer(option)" ng-click="setCorrectAnswer(option)" class="btn btn-warning">incorect</button>
+    <button ng-click="removeAnswerOption($index)"class="btn btn-danger pull-right">
+      <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+    </button>
+  <h4>
+</li>

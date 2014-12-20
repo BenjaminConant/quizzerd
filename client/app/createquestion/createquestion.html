@@ -1,0 +1,22 @@
+<div class="jumbotron">
+  <form>
+    <ul>
+        <div>
+          <h2 class="row">
+            <input placeholder="Prompt" ng-model="defaultQuestion.prompt" required>
+          </h2>
+          <ol class="row">
+            <createansweroption ng-repeat="option in defaultQuestion.answerOptions track by $index"></createansweroption>
+          </ol>
+          <button ng-click="addAnswerOption()" class="btn btn-success">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Answer Option
+          </button>
+        </div>
+    </ul>
+  </form>
+  <button ng-click="saveQuestion()"class="btn btn-primary">
+    <span class="glyphicon glyphicon-floppy-saved" aria-hidden="true"></span>
+     Save Question
+     </button>
+</div>
+

@@ -1,0 +1,21 @@
+<div ng-hide="questions.length > 0">
+  <div ng-hide="showCreateQuestion" class="jumbotron text-center">
+    <p> You have no questions :( ... would you like to</p>
+    <button class="btn btn-success" ng-click="setDisplay('create question')"> Create a Question </button>
+    or
+    <button class="btn btn-primary" ng-click="setDisplay('search questions')"> Search For A Question </button>
+  </div>
+</div>
+
+<div ng-show="questions.length > 0">
+  <div ng-repeat="question in questions">
+    <div>
+      <h3> {{question.prompt}} </h3>
+      <button ng-click="addPublicQuestion(question._id)" class="btn btn-success pull-right">Add to my questions</button>
+    </div>
+    <ul>
+      <li ng-repeat="option in question.answerOptions">
+        {{option.value}}<button ng-show="option.correct" class="btn btn-success"></button>
+      </li>
+    </ul>
+  </div>
